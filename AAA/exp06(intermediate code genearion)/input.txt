@@ -1,1 +1,0 @@
-Enter a simple arithmetic expression: a+b*c

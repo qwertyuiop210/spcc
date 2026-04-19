@@ -1,6 +1,0 @@
-Expanded Code:
-START
-LOAD A
-ADD =1
-STORE A
-END
