@@ -1,0 +1,12 @@
+Enter number of lines:
+9
+Enter source program:
+MACRO
+INCR &ARG1
+LOAD &ARG1
+ADD =1
+STORE &ARG1
+MEND
+START
+INCR A
+END

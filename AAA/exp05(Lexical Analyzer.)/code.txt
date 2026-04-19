@@ -1,0 +1,88 @@
+# Lexical Analyzer 
+KEYWORDS = {"int", "float", "if", "else", "while", "return"}
+
+OPERATORS = {"+", "-", "*", "/", "=", "<", ">"}
+SEPARATORS = {"(", ")", "{", "}", ";", ","}
+
+
+def is_keyword(word):
+    return word in KEYWORDS
+
+
+code = input("Enter source code:\n")
+
+buffer = ""
+
+for ch in code:
+
+    # Operator
+    if ch in OPERATORS:
+        if buffer:
+            if is_keyword(buffer):
+                print("Keyword:", buffer)
+            elif buffer[0].isdigit():
+                print("Number:", buffer)
+            else:
+                print("Identifier:", buffer)
+            buffer = ""
+
+        print("Operator:", ch)
+
+    # Separator
+    elif ch in SEPARATORS:
+        if buffer:
+            if is_keyword(buffer):
+                print("Keyword:", buffer)
+            elif buffer[0].isdigit():
+                print("Number:", buffer)
+            else:
+                print("Identifier:", buffer)
+            buffer = ""
+
+        print("Separator:", ch)
+
+    # Literal (string)
+    elif ch == '"':
+        if buffer:
+            if is_keyword(buffer):
+                print("Keyword:", buffer)
+            else:
+                print("Identifier:", buffer)
+            buffer = ""
+
+        literal = ""
+        continue_flag = False
+
+        for c in code[code.index(ch)+1:]:
+            if c == '"':
+                print("Literal:", literal)
+                continue_flag = True
+                break
+            literal += c
+
+        if continue_flag:
+            break
+
+    # Build identifier/number
+    elif ch.isalnum():
+        buffer += ch
+
+    # Space → end token
+    elif ch == " ":
+        if buffer:
+            if is_keyword(buffer):
+                print("Keyword:", buffer)
+            elif buffer[0].isdigit():
+                print("Number:", buffer)
+            else:
+                print("Identifier:", buffer)
+            buffer = ""
+
+# Last token check
+if buffer:
+    if is_keyword(buffer):
+        print("Keyword:", buffer)
+    elif buffer[0].isdigit():
+        print("Number:", buffer)
+    else:
+        print("Identifier:", buffer)
