@@ -1,0 +1,20 @@
+Enter number of entries in MNT:
+1
+Enter MNT (name and MDT index):
+INCR 0
+
+Enter number of entries in MDT:
+5
+Enter MDT entries:
+INCR &ARG1
+LOAD #0
+ADD =1
+STORE #0
+MEND
+
+Enter number of lines in intermediate code:
+3
+Enter intermediate code:
+START
+INCR A
+END
