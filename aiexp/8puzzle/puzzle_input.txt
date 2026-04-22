@@ -1,0 +1,57 @@
+input
+1 2 3
+4 0 6
+7 5 8
+
+Example Input (USE THIS)
+1 2 3
+4 0 6
+7 5 8
+✅ Output (Short)
+✅ Solution Steps:
+
+[1, 2, 3]
+[4, 0, 6]
+[7, 5, 8]
+
+[1, 2, 3]
+[4, 5, 6]
+[7, 0, 8]
+
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 0]
+
+Total moves: 2
+
+Definition
+
+The 8-puzzle problem consists of a 3×3 grid with 8 numbered tiles and one blank space.
+The objective is to reach the goal state by sliding tiles into the blank space.
+
+A* in 8-Puzzle
+
+A* uses:
+
+g(n) = number of moves so far
+h(n) = number of misplaced tiles
+f(n) = g(n) + h(n)
+
+It always selects the state with the lowest f(n).
+
+Advantages
+Finds optimal solution
+Uses heuristic to reduce search space
+Efficient compared to brute-force
+Disadvantages
+High memory usage
+Time complexity increases for difficult states
+💡 Heuristic Example
+
+For your input:
+
+2 8 3
+1 6 4
+7 0 5
+
+Misplaced tiles = 6
