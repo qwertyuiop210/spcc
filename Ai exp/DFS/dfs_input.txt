@@ -1,0 +1,70 @@
+Enter number of nodes: 5
+
+Enter node: A
+Enter neighbours of A separated by space: B C
+
+Enter node: B
+Enter neighbours of B separated by space: D E
+
+Enter node: C
+Enter neighbours of C separated by space:
+
+Enter node: D
+Enter neighbours of D separated by space:
+
+Enter node: E
+Enter neighbours of E separated by space:
+
+Enter starting node: A
+
+
+
+output:- A B D E C
+
+
+Depth First Search (DFS)
+
+Definition:
+DFS is a graph traversal technique that explores a node, then goes as deep as possible along each branch before backtracking.
+
+How it works:
+
+Start from a node
+Visit it
+Recursively visit its first unvisited neighbour
+Continue until no more nodes → backtrack
+
+Data Structure Used: Stack (via recursion)
+
+Applications:
+
+Path finding
+Cycle detection
+Topological sorting
+✅ Example Graph
+        A
+       / \
+      B   C
+     / \
+    D   E
+
+Adjacency List:
+
+A → B, C
+B → D, E
+C → -
+D → -
+E → -
+
+DFS Traversal (starting from A):
+
+A → B → D → E → C
+
+Differences
+
+| Feature        | DFS          | BFS                   |
+| -------------- | ------------ | --------------------- |
+| Strategy       | Depth-wise   | Level-wise            |
+| Data Structure | Stack        | Queue                 |
+| Path           | Not shortest | Shortest (unweighted) |
+| Memory         | Less         | More                  |
